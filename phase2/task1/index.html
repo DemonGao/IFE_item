@@ -14,8 +14,12 @@
 <script type="text/javascript">
 
 (function() {
- 
-
+//正则表达式验证表单输入
+var regnum=/[0-9]/; //    或者   /\d/
+//删除两边的空格
+var trim = function(str) {
+	return str.replace(/(^\s*)|(\s*$)/g, "");
+}
  var aqiinput=document.getElementById("aqi-input");
  var aqidisplay=document.getElementById("aqi-display");
  var button1=document.getElementById("button");
@@ -27,7 +31,15 @@
 
 //第二种  添加监听事件
 button1.addEventListener("click",function(){
-	aqidisplay.innerHTML=aqiinput.value;
+	if(!regnum.test(aqiinput.value))
+ {
+ 	aqidisplay.innerHTML="尚无录入";
+ 	alert("空气质量必须为整数");
+ 
+ }else{
+ 	aqidisplay.innerHTML=aqiinput.value;
+ }
+	
 })
 
 
