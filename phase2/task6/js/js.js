@@ -12,13 +12,24 @@ var list={
 	},
 	//左侧出
 	"left-out":function(){
-		this.queue.shift();
-		list.paint();
+		if(this.queue.length==0)
+		{
+			alert("队列为空");
+		}else{
+			this.queue.shift();
+			list.paint();
+		}
+		
 	},
 	//右侧出
 	"right-out":function(){
-		this.queue.pop();
-		list.paint();
+		if(this.queue.length==0)
+		{
+			alert("队列为空!");
+		}else{
+			this.queue.pop();
+			list.paint();
+		}
 	},
 	del:function(num){
 		this.queue.splice(num,1);
@@ -55,10 +66,16 @@ var btnli=document.getElementById("left-in");
 var btnri=document.getElementById("right-in");
 var btnlo=document.getElementById("left-out");
 var btnro=document.getElementById("right-out");
+var regNum = /^\d{1,3}$/;
 btnli.addEventListener("click",function(){
 	var inputValue=document.getElementById("inputnum").value;
-	list["left-in"](inputValue);
-	console.log("左侧入");
+	if(regNum.test(inputValue)){
+		list["left-in"](inputValue);
+		console.log("左侧入");
+	}else{
+		alert("请输入整数,且1到3位数之间!")
+	}
+	
 });
 btnri.addEventListener("click",function(){
 	var inputValue=document.getElementById("inputnum").value;
