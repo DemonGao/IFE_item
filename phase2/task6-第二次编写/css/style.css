@@ -1,0 +1,29 @@
+ul{
+	list-style: none;
+}
+li{
+	float: left;
+	margin: 20px;
+	width: 60px;
+	height: 60px;
+	background-color: #E25C60;
+	color: #FFFFFF;
+	border-radius: 60px;
+	text-align: center;
+	line-height: 60px;
+}
+*{
+	margin: 0px;
+	padding: 0px;
+}
+.btnteam{
+	width:200px;
+	height: 80px;
+	margin: 30px auto;
+}
+#box{
+	width: 800px;
+	height: 600px;
+	margin: 0px auto;
+	border: 1px solid #16324A;
+}
