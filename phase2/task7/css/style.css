@@ -1,0 +1,37 @@
+ul{
+	list-style: none;
+	display:flex;
+	flex-direction: row;
+	align-items: flex-end;
+}
+li{
+	float: left;
+	margin: 0 1px 0 0;
+	width: 20px;
+	border: 1px solid #E25C60;
+	color: #E25C60;
+	
+}
+*{
+	margin: 0px;
+	padding: 0px;
+}
+.btnteam{
+	width:240px;
+	height: 80px;
+	margin: 10px auto;
+}
+
+#box{
+	display:-webkit-flex;/*Webkit内核的浏览器*/
+	display:flex;
+	flex-direction: row;
+	align-items: flex-end;
+	/*-webkit-align-items:flex-end;
+	align-items:flex-end;*/
+	width: 800px;
+	height: 300px;
+	margin: 0px auto;
+	border: 1px solid #16324A;
+	
+}
