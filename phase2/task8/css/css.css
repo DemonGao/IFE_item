@@ -7,7 +7,10 @@ ul{
 li{
 	float: left;
 	margin: 0 1px 0 0;
-	width: 20px;
+	width: 80px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
 	border: 1px solid #E25C60;
 	color: #E25C60;
 	
@@ -17,24 +20,18 @@ li{
 	padding: 0px;
 }
 .btnteam{
-	width:240px;
+	width:440px;
 	height: 80px;
 	margin: 10px auto;
 }
 .btnteam textarea{
-	width: 235px;
+	width: 418px;
 	height: 50px;
 }
 #box{
-	display:-webkit-flex;/*Webkit内核的浏览器*/
-	display:flex;
-	flex-direction: row;
-	align-items: flex-end;
-	/*-webkit-align-items:flex-end;
-	align-items:flex-end;*/
 	width: 800px;
 	height: 300px;
-	margin: 0px auto;
+	margin: 20px auto 0px;
+	padding: 20px;
 	border: 1px solid #16324A;
-	
 }

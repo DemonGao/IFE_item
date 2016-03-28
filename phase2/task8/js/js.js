@@ -26,30 +26,80 @@ var list={
 				fun(arr[i]);
 			}
 		},
+		//添加方法
 		wordadd:function(word){
 			var newli=document.createElement("li");
 			newli.className="list";
 			newli.innerHTML=word;
-			newli.style.height=word*3+'px';
-			newul.appendChild(newli);
+			return newli;
 		},
+		//删除方法
+		worddel:function(e){
+			alert(e.innerHTML);
+			newul.removeChild(e);
+		},
+		//查询方法(模糊查询)
+		fuzzyQuery:function(serchtext){
+			//清除上一次查询的标记
+			list.Util.clearState();
+
+			var liarr=document.querySelectorAll(".list");
+			for(var i=0;i<liarr.length;i++)
+			{
+				if(liarr[i].innerHTML.indexOf(serchtext)!=-1)
+				{
+					liarr[i].style.background="#E25C60";
+					liarr[i].style.color="#fff";
+				}
+			}
+		},
+		clearState:function(){
+			var liarr=document.querySelectorAll(".list");
+			for(var i=0;i<liarr.length;i++)
+			{
+				liarr[i].style.background="#fff";
+				liarr[i].style.color="#E25C60";
+			}
+		}
 	},
 	operate:{
 		//左侧进
 		leftin:function(word){
-			list.Util.wordadd(word);
+			var newli=list.Util.wordadd(word);
+			newul.insertBefore(newli,newul.childNodes[0]);
+			//添加鼠标点击删除事件
+			addEvent(newli,"click",function(){list.Util.worddel(this);});
 		},
 		//右侧进
-		rightin:function(){
-
+		rightin:function(word){
+			var newli=list.Util.wordadd(word);
+			newul.appendChild(newli);
+			//添加鼠标点击删除事件
+			addEvent(newli,"click",function(){list.Util.worddel(this);});
 		},
 		//左侧出
 		leftout:function(){
-
+			var liarr=document.querySelectorAll(".list");
+			if(liarr.length==0)
+			{
+				alert("队列为空!请先添加元素");
+			}else{
+				list.Util.worddel(liarr[0]);
+			}
 		},
 		//右侧出
 		rightout:function(){
-
+			var liarr=document.querySelectorAll(".list");
+			if(liarr.length==0)
+			{
+				alert("队列为空!请先添加元素");
+			}else{
+				list.Util.worddel(liarr[liarr.length-1]);
+			}
+		},
+		serch:function(){
+			var serchtext=document.getElementById("select").value;
+			list.Util.fuzzyQuery(serchtext);
 		}
 	},
 	add:{
@@ -68,6 +118,10 @@ var list={
 var btns=document.getElementsByTagName("button");
 addEvent(btns[0],"click",function(){list.add["left"]();});
 addEvent(btns[1],"click",function(){list.add["right"]();});
+addEvent(btns[2],"click",function(){list.operate["leftout"]()});
+addEvent(btns[3],"click",function(){list.operate["rightout"]()});
+addEvent(btns[4],"click",function(){list.operate["serch"]()});
+
 
 //插入ul
 var box=document.getElementById("box");
