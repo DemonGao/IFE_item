@@ -1,0 +1,37 @@
+ul{
+	list-style: none;
+	display:flex;
+	flex-direction: row;
+	align-items: flex-end;
+}
+li{
+	float: left;
+	margin: 0 1px 0 0;
+	width: 80px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	border: 1px solid #E25C60;
+	color: #E25C60;
+	
+}
+*{
+	margin: 0px;
+	padding: 0px;
+}
+.btnteam{
+	width:440px;
+	height: 80px;
+	margin: 10px auto;
+}
+.btnteam textarea{
+	width: 418px;
+	height: 50px;
+}
+#box{
+	width: 800px;
+	height: 300px;
+	margin: 20px auto 0px;
+	padding: 20px;
+	border: 1px solid #16324A;
+}
