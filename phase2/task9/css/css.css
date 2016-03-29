@@ -1,0 +1,42 @@
+p{
+	margin-top: 20px;
+	font: 30px '黑体';
+	text-align: center;
+}
+button#tagbtn{
+	display: none;
+}
+input[type="text"]{
+	font-size: 18px;
+}
+#hobby{
+	width: 280px;
+	height: 60px;
+}
+.tagdiv,.hobbydiv{
+	float: left;
+	height: 400px;
+	width: 49%;
+	margin: 0px auto;
+	border: 1px solid #333;
+}
+.tagdiv{
+	margin-right: 0.5%;
+}
+.hobbydiv{
+	margin-left: 0.5%;
+}
+div#TagBox{
+	width: 100%;
+	height: 100%;
+}
+div.taglist{
+	float: left;
+	width: 60px;
+	height: 40px;
+	margin: 10px;
+	padding: 0px;
+	line-height: 40px;
+	text-align: center;
+	background: green;
+}
