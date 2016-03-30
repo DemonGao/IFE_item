@@ -50,7 +50,6 @@ Tag.prototype={
 		console.log("key="+key+"---"+this.strarr.length);
 		for(var i=0;i<this.strarr.length;i++)
 		{
-			console.log("strarr["+i+"]="+this.strarr[i]);
 			if(this.strarr[i]==key || key == " " || key == ","){
 				return false;
 			}
@@ -59,27 +58,40 @@ Tag.prototype={
 	},
 	addStrarr:function(num){
 		var This=this;
+		var date=new Date();
+		var time=date.getTime();
+		console.log("此标签创建时间:"+time);
 		if(this.strarr.length==10)
 		{
-			this.strarr.shift();
-			this.strarr.push(num);
-			this.box.childNodes[This.count].innerHTML=num;
-			This.count++;
-			if(This.count>9)
+			var min=9999999999999;
+			var minindex=0;
+			for(var i=0;i<This.box.childNodes.length;i++)
 			{
-				This.count=0;
+				if(min>This.box.childNodes[i].getAttribute("createtime"))
+				{
+					minindex=i;
+					min=This.box.childNodes[i].getAttribute("createtime");
+				}
 			}
+			This.strarr.splice(minindex,1,num);
+			This.box.childNodes[minindex].innerHTML=num;
+			This.box.childNodes[minindex].setAttribute("createtime",time);
+			
 		}else{
 			this.strarr.push(num);
-			this.showTag(num);
+			this.showTag(num,time);
+		}
+		for(var i=0;i<This.strarr.length;i++)
+		{
+			console.log("strarr["+i+"]="+this.strarr[i]);
 		}
 		
 	},
-	showTag:function(num){
+	showTag:function(num,time){
 		var This=this;
 		var newdiv=document.createElement("div");
 		newdiv.className="taglist";
-		newdiv.setAttribute('createtime', date.getTime());
+		newdiv.setAttribute('createtime',time);
 		newdiv.innerHTML=num;
 		this.box.appendChild(newdiv);
 		addEvent(newdiv,"click",function(){
@@ -97,7 +109,7 @@ Tag.prototype={
 		this.box.removeChild(node);
 	},
 };
-var date=new Date();
+
 var tag1=new Tag('TagInput','TagBox','tagbtn');
 tag1.id.onkeypress=function(e){
 	//标准浏览器event  IE:window.event
