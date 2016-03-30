@@ -19,7 +19,7 @@ function Tag(id,box,btn){
 		this.box=document.getElementById(box);
 		this.btn=document.getElementById(btn);
 		this.strarr=[];
-		this.event;
+		this.count=0;
 	}else{
 		return new Tag(id,box,btn);
 	}
@@ -34,10 +34,9 @@ Tag.prototype={
 	tagKeypress:function(e){
 		var key=this.id.value.trim();
 		//keyCode=13回车 keyCode=32 空格 keyCode=188 逗号
-		console.log(e.keyCode);
 		if(e.keyCode===32|| e.keyCode === 13 || e.keyCode === 44)
 		{
-			if(!this.checkKey(key)){
+			if(this.checkKey(key)&&key!=""){
 				this.addStrarr(key);
 			}else{
 				alert("您输入的标签重复!");
@@ -52,36 +51,56 @@ Tag.prototype={
 		for(var i=0;i<this.strarr.length;i++)
 		{
 			console.log("strarr["+i+"]="+this.strarr[i]);
-			if(this.strarr[i]==key|| key == " " || key == "," || key == ""){
-				return true;
+			if(this.strarr[i]==key || key == " " || key == ","){
+				return false;
 			}
 		}
-		return false;
+		return true;
 	},
 	addStrarr:function(num){
+		var This=this;
 		if(this.strarr.length==10)
 		{
 			this.strarr.shift();
+			this.strarr.push(num);
+			this.box.childNodes[This.count].innerHTML=num;
+			This.count++;
+			if(This.count>9)
+			{
+				This.count=0;
+			}
+		}else{
+			this.strarr.push(num);
+			this.showTag(num);
 		}
-		this.strarr.push(num);
-		this.showTag(num);
+		
 	},
 	showTag:function(num){
+		var This=this;
 		var newdiv=document.createElement("div");
 		newdiv.className="taglist";
+		newdiv.setAttribute('createtime', date.getTime());
 		newdiv.innerHTML=num;
 		this.box.appendChild(newdiv);
-		this.event=newdiv;
-		console.log(this.event.innerHTML);
-		addEvent(newdiv,"click",function(){this.removeChild(this.box,newdiv)});
+		addEvent(newdiv,"click",function(){
+			This.box.removeChild(this);
+			for(i in This.strarr)
+			{
+				if(This.strarr[i]==this.innerHTML)
+				{
+					This.strarr.splice(i, 1);
+				}
+			}
+		});		
 	},
-	removeChild:function(parent,son){
-		parent.removeChild(son);
+	del:function(node){
+		this.box.removeChild(node);
 	},
 };
-
+var date=new Date();
 var tag1=new Tag('TagInput','TagBox','tagbtn');
 tag1.id.onkeypress=function(e){
+	//标准浏览器event  IE:window.event
 	var e=e||window.event;
 	tag1.tagKeypress(e);
 }
