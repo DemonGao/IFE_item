@@ -41,13 +41,13 @@ Tag.prototype={
 				alert("您输入的标签"+keyarr[i]+"重复!");
 			}
 		}
-		This.id.value=null;
+		// This.id.value=null;
 	},
 	// 处理文本框,若遇到回车、空格、逗号则生成一个Tag标签
 	tagKeypress:function(e){
 		var key=this.id.value.trim();
-		//keyCode=13回车 keyCode=32 空格 keyCode=188 逗号
-		if(e.keyCode===32|| e.keyCode === 13 || e.keyCode === 44)
+		//keyCode=13回车 keyCode=32 空格 keyCode=44逗号
+		if(e.keyCode===32|| e.keyCode === 13 ||e.keyCode===44)
 		{
 			if(this.checkKey(key)&&key!=""){
 				this.addStrarr(key);
@@ -55,7 +55,7 @@ Tag.prototype={
 				alert("您输入的标签重复!");
 			}
 			//文本框内容清空
-			this.id.value=null;
+			this.id.value="";
 		}
 	},
 	//检验查重
@@ -63,7 +63,7 @@ Tag.prototype={
 		// console.log("key="+key+"---"+this.strarr.length);
 		for(var i=0;i<this.strarr.length;i++)
 		{
-			if(this.strarr[i]==key || key == " " || key == ","){
+			if(this.strarr[i]==key||key==","||key==""){
 				return false;
 			}
 		}
@@ -136,11 +136,12 @@ Tag.prototype={
 };
 
 var tag1=new Tag('TagInput','TagBox','tagbtn');
-tag1.id.onkeypress=function(e){
+addEvent(tag1.id,'keypress',function(e){
 	//标准浏览器event  IE:window.event
 	var e=e||window.event;
 	tag1.tagKeypress(e);
-};
+});
+
 var tag2=new Tag('hobby','HobbyBox','hobbybtn');
 addEvent(tag2.btn,'click',function(){
 	tag2.btnclick();
