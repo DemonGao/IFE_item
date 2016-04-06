@@ -75,11 +75,12 @@ addEvent(btns[0],'click',function(){
 	
 });
 addEvent(btns[1],'click',function(){
+	tree.index=0;
 	tree.breadthSearch(root);
-	for(var i=0;i<tree.nodearr.length;i++)
-	{
-		console.log(tree.nodearr[i]);
-	}
+//	for(var i=0;i<tree.nodearr.length;i++)
+//	{
+//		console.log(tree.nodearr[i]);
+//	}
 	tree.draw(null);
 });
 addEvent(btns[2],'click',function(){
@@ -89,6 +90,7 @@ addEvent(btns[2],'click',function(){
 	
 });
 addEvent(btns[3],'click',function(){
+	tree.index=0;
 	var serch=document.getElementById("serch").value.trim();
 	tree.breadthSearch(root);
 	tree.draw(serch);
