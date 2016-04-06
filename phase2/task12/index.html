@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>任务二十二：JavaScript和树（三）</title>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<div class="container">
+		<div id="content">Super
+			<div id="child1">Cat
+				<div id="child2">Apple
+					<div id="child3">Pear</div>
+					<div id="child3">Pig</div>
+					<div id="child3">Cola</div>
+					<div id="child3">Soccor</div>
+				</div>
+				<div id="child2">Phone</div>
+				<div id="child2">
+					<div id="child3">Book</div>
+					<div id="child3">School</div>
+				</div>
+			</div>
+			<div id="child1">Note
+				<div id="child2">Human
+					<div id="child3">Code</div>
+					<div id="child3">Operate</div>
+					<div id="child3">Man</div>
+				</div>
+				<div id="child2">Program
+					<div id="child3">Bement
+						<div id="child4">Cat</div>
+					</div>
+					<div id="child3">Pear</div>
+				</div>
+			</div>
+			<div id="child1">F&h</div>
+		</div>
+		</div>
+		<div id="operateBox">
+			<input type="text" placeholder="请输入要出入的节点内容" id="neirong" />
+			<button>增加</button>
+			<button>删除</button>
+		</div>	
+		<div id="btnteam">
+			<button>深度优先遍历</button>
+			<button>广度优先遍历</button>
+			<input type="text" id="serch" placeholder="请输入所要查询的内容"/>
+			<button>深度优先搜索</button>
+			<button>广度优先搜索</button>
+			<input id="speed" type="number" max="2000" min="10" placeholder="请输入间隔时间(ms)" value="500" />(ms)
+		</div>
+	<script type="text/javascript" src="js/util.js" ></script>	
+	<script type="text/javascript" src="js/js.js" ></script>	
+	</body>
+</html>
