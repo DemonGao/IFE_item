@@ -1,0 +1,94 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	font: 16px "微软雅黑";
+}
+.content{
+	width: 800px;
+	height: 600px;
+	margin:20px auto;
+	
+}
+.searchdiv{
+	
+}
+.searchdiv fieldset{
+	padding:15px 2em ;
+}
+.searchdiv legend{
+	font:22px "楷体";
+}
+.searchdiv button,input{
+	font-size: 16px;
+	height: 30px;
+}
+.searchdiv input[type="text"]{
+	width: 300px;
+	text-indent: 0.5em;
+	margin:0px 7em;
+}
+.searchdiv button{
+	padding: 0px 20px;
+	border: 1px solid salmon;
+	background-color: salmon;
+}
+.letterspacing{
+	margin-right: 1em;
+}
+/*树*/
+.treediv{
+	width: 500px;
+	margin: 40px auto 0px;
+	padding: 10px 0px;
+	border: 2px solid #6E8095;
+}
+.tree{
+	margin-top: 1em;
+	margin-left: 2em;
+}
+.tree-hidden{
+	display: none;
+}
+.tree-head{
+	display: block;
+}
+.tree-head-title{
+	margin-right: 4em;
+}
+.tree-head-title:hover{
+	cursor: pointer;
+}
+/*icon的公共样式*/
+.tree-head .icon{
+	display: inline-block;
+	width:16px ;
+	height: 16px;
+	margin-right: .5em;
+	
+}
+/*icon 样式*/
+.tree-head .icon-open{
+	background: url(../images/open.ico) no-repeat center center;
+}
+.tree-head .icon-close{
+	background: url(../images/close.ico) no-repeat center center;
+}
+.tree-head .icon-empty{
+	background: none;
+}
+.tree-head .icon-add,.tree-head .icon-del{
+	display: none;
+}
+.tree-head .icon-add{
+	background: url(../images/add.ico) no-repeat center center;
+	background-size: 100% 100%;
+}
+.tree-head .icon-del{
+	background: url(../images/del.ico) no-repeat center center;
+	background-size: 100% 100%;
+}
+
+.icon-add.show,.icon-del.show{
+	display: inline-block;
+}
+
