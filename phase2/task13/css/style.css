@@ -50,13 +50,14 @@
 	display: none;
 }
 .tree-head{
-	display: block;
+	
 }
 .tree-head-title{
 	margin-right: 4em;
 }
-.tree-head-title:hover{
+.tree-head:hover{
 	cursor: pointer;
+	color: orangered;
 }
 /*icon的公共样式*/
 .tree-head .icon{
