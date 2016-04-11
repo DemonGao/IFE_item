@@ -1,0 +1,47 @@
+*{
+	margin: 0px;
+	padding:0px;
+	font:20px '微软雅黑';
+}
+section{
+	width: 560px;
+	/*height: 200px;*/
+	margin: 200px auto 0px;
+}
+section > p.pinput{
+	/*margin-top: 30px;*/
+	text-indent: 2em;
+}
+section > p.pinput:nth-of-type(7){
+	text-indent: 0em;
+}
+.checkresult{
+	text-indent: 5.5em;
+	margin:10px 0px; 
+}
+section input{
+	margin-left: 20px;
+	width: 400px;
+	height: 40px;
+	border: 1px solid #ccc;
+	border-radius:5px;
+	text-indent:.5em;
+}
+section button{
+	width: 76px;
+	height: 40px;
+	background-color: rgb(47,121,186);
+	border: none;
+	border-radius: 5px;
+}
+.pbtn{
+	text-align: center;
+}
+section button:hover{
+	cursor: pointer;
+}
+
+#checkresult{
+	margin-top: 10px;
+	text-indent: 3.5em;
+}
