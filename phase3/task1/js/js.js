@@ -8,8 +8,6 @@ var Surfaced=function(id,base){
 	{
 		this.id=id;
 		this.base=base;
-		this.top='0';
-		this.left='0';
 		this.move=false;
 	}else{
 		return new Surfaced(id,base);
@@ -24,7 +22,6 @@ Surfaced.prototype={
 		//浮出层显示绑定
 		Gsc.on(this.base['showElementL'],'click',function(){
 			Gsc.css(dom,'display','block');
-//			Gsc.attr(dom,'className','surface show');
 			//创建遮盖图层
 			var covering=Gsc.newElement('div');
 			Gsc.css(covering,'width','100%');
@@ -99,10 +96,6 @@ Surfaced.prototype={
 			Gsc.on(dom,'mousedown',function(event){
 				preventDefault(event);
 				this.move=true;
-//				this.left=event.clientX;
-//				this.top=event.clientY;		
-//				console.log('mousedown'+this.left+','+this.top);
-
 				disX = event.clientX - dom.offsetLeft;
 				disY = event.clientY - dom.offsetTop;
 			});
@@ -110,9 +103,7 @@ Surfaced.prototype={
 			Gsc.on(dom,'mouseup',function(event){
 				preventDefault(event);
 				this.move=false;
-				
-//				xValue=this.left;
-//				yValue=this.top;
+
 				console.log('mouseup'+this.left+','+this.top);
 			});
 			Gsc.on(dom,'mousemove',function(event){
@@ -130,16 +121,6 @@ Surfaced.prototype={
 					iT >= maxT && (iT = maxT);
 					Gsc.css(dom,'left',iL+'px');
 					Gsc.css(dom,'top',iT+'px');
-//					xValue=(parseInt(event.clientX)-parseInt(this.left))*2;
-//					yValue=(parseInt(event.clientY)-parseInt(this.top))*2;
-//					Gsc.css(dom,'left',xValue+'px');
-//					Gsc.css(dom,'top',yValue+'px');
-					
-//					this.left=Gsc.getcss(dom,'left').split('px');
-//					this.top=Gsc.getcss(dom,'top').split('px');
-//					console.log('mousemove'+Gsc.getcss(dom,'left')+','+Gsc.getcss(dom,'top'));
-//					console.log('mousemove'+xValue+','+yValue);
-//					console.log('mousemove this.left top'+this.left+','+this.top);
 				}
 			});
 		}
