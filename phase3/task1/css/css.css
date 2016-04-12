@@ -58,68 +58,9 @@
 .surface-foot p{
 	line-height: 40px;
 }
-/*拖拽线和点*/
-.surface .resizeBR {
-	position:absolute;
-	width:14px;
-	height:14px;
-	right:0;
-	bottom:0;
-	overflow:hidden;
-	cursor:nw-resize;
-	z-index: 1;
-	background:url(../images/resize.png) no-repeat;
+pre{
+	color: #FFFFFF;
 }
-.surface .resizeL, .surface .resizeT, .surface .resizeR, .surface .resizeB, .surface .resizeLT, .surface .resizeTR, .surface .resizeLB {
-	position:absolute;
-	background:#000;
-	overflow:hidden;
-	opacity:0;
-	filter:alpha(opacity=0);
-}
-.surface .resizeL, .surface .resizeR {
-	top:0;
-	width:10px;
-	height:100%;
-	cursor:w-resize;
-}
-.surface .resizeR {
-	right:0;
-}
-.surface .resizeT, .surface .resizeB {
-	width:100%;
-	height:5px;
-	cursor:n-resize;
-}
-.surface .resizeT {
-	top:0;
-}
-.surface .resizeB {
-	bottom:0;
-}
-.surface .resizeLT, .surface .resizeTR, .surface .resizeLB {
-	width:16px;
-	height:16px;
-	background:#FF0;
-}
-.surface .resizeLT {
-	top:0;
-	left:0;
-	cursor:nw-resize;
-}
-.surface .resizeTR {
-	top:0;
-	right:0;
-	cursor:ne-resize;
-}
-.surface .resizeLB {
-	left:0;
-	bottom:0;
-	cursor:ne-resize;
-	z-index: 1;
-}
-
-
 /*按钮*/
 
 body{
