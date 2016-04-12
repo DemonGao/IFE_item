@@ -8,6 +8,10 @@ var Surfaced=function(id,base){
 	{
 		this.id=id;
 		this.base=base;
+<<<<<<< HEAD
+		this.move=false;
+=======
+>>>>>>> refs/remotes/origin/master
 	}else{
 		return new Surfaced(id,base);
 	}
@@ -161,6 +165,37 @@ Surfaced.prototype={
 			document.onmousemove = function (event){
 				var event=getEvent(event);
 				preventDefault(event);
+<<<<<<< HEAD
+				this.move=true;
+				disX = event.clientX - dom.offsetLeft;
+				disY = event.clientY - dom.offsetTop;
+			});
+			//鼠标按键被松开。
+			Gsc.on(dom,'mouseup',function(event){
+				preventDefault(event);
+				this.move=false;
+
+				console.log('mouseup'+this.left+','+this.top);
+			});
+			Gsc.on(dom,'mousemove',function(event){
+				if(this.move){
+					var event=getEvent(event);
+					preventDefault(event);
+					var iL = event.clientX - disX+parseInt(base['width'].split('px')[0])/2;
+					var iT = event.clientY - disY+parseInt(base['height'].split('px')[0])/2;
+					var maxL = document.documentElement.clientWidth - dom.offsetWidth+parseInt(base['width'].split('px')[0])/2;
+					var maxT = document.documentElement.clientHeight - dom.offsetHeight+parseInt(base['height'].split('px')[0])/2;
+					
+					iL <= parseInt(base['width'].split('px')[0])/2 && (iL = parseInt(base['width'].split('px')[0])/2);
+					iT <= parseInt(base['height'].split('px')[0])/2 && (iT = parseInt(base['height'].split('px')[0])/2);
+					iL >= maxL && (iL = maxL);
+					iT >= maxT && (iT = maxT);
+					Gsc.css(dom,'left',iL+'px');
+					Gsc.css(dom,'top',iT+'px');
+				}
+			});
+		}
+=======
 				var iL = event.clientX - disX+parseInt(base['width'].split('px')[0])/2;
 				var iT = event.clientY - disY+parseInt(base['height'].split('px')[0])/2;
 				var maxL = document.documentElement.clientWidth - dom.offsetWidth+parseInt(base['width'].split('px')[0])/2;
@@ -231,6 +266,7 @@ Surfaced.prototype={
 			return false;
 		});
 		//鼠标移动
+>>>>>>> refs/remotes/origin/master
 	},
 	
 };
