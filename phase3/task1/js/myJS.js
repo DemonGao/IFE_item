@@ -38,6 +38,11 @@ var Gsc={
 		var dom=typeof id==='string'?document.getElementById(id):id;
 		dom.style[key]=value;
 	},
+	//获取css属性值
+	getcss:function(id,key){
+		var dom=typeof id==='string'?document.getElementById(id):id;
+		return dom.style[key];
+	},
 	html:function(id,value){
 		var dom=typeof id==='string'?document.getElementById(id):id;
 		dom.innerHTML=value;
