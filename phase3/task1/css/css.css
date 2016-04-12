@@ -10,17 +10,9 @@
 }
 .surface{
 	position: fixed;
-	top: 0px;
-	bottom: 0px;
-	left: 0px;
-	right: 0px;
-	width:600px;
-	height: 300px;
-	margin: auto;
 	border: 1px solid #16324A;
 	z-index: 99999;
 	background: #FFFFFF;
-	transition: all 2s;
 	display: none;
 }
 
@@ -55,7 +47,6 @@
 .surface-content{
 	position: relative;
 	top: 0px;
-	height: 260px;
 	padding: 0px 20px;
 }
 .surface-foot{
@@ -75,6 +66,7 @@ pre{
 body{
 	background-color: #000000;
 	height: 3000px;
+	width: 100%;
 }
 .container{
 	width: 400px;
