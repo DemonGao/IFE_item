@@ -1,0 +1,71 @@
+.tableBox{
+	width: 750px;
+	margin: auto;
+	box-sizing: border-box;
+}
+/*UI组件之排序表格*/
+
+.sorttable{
+	box-sizing: border-box;
+	width: auto;
+	text-align: center;
+	position: relative;
+}
+.sorttable tr,.sorttable td,.sorttable th{
+	border-bottom: 1px solid #16324A;
+	border-right: 1px solid #16324A;
+	box-sizing: border-box;
+}
+.sorttable tr:first-child,.sorttable td:first-child,.sorttable th:first-child{
+	border-left: 1px solid #16324A;
+}
+	
+.sorttable td,.sorttable th{
+	width: 150px;
+}
+.sorttable tr{
+	box-sizing: border-box;
+	line-height: 34px;
+	font-size: 18px;
+}
+
+.sorttable tr:first-child{
+	font: 24px "黑体";
+	color: #FFFFFF;
+	background: #444;
+	line-height: 44px;
+
+}
+
+.sorttable th{
+	position: relative;
+}
+.sorttable th:hover{
+	background: #000;
+	cursor: pointer;
+}
+.sorttable td:hover{
+	background: #dfdfdf;
+	cursor: pointer;
+}
+.sorttable .icon{
+	position: absolute;
+	top: 10px;
+	width: 24px;
+	height:24px;
+	line-height: 24px;
+	transition: all 1s;
+}
+.icon:hover{
+	transform: scale(1.7);
+	transition: all 1s;
+	cursor: pointer;
+}
+.icon.icon-asc{
+	right: 30px;
+}
+.icon.icon-desc{
+	right: 10px;
+}
+/*----end----*/
+
