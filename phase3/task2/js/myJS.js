@@ -113,7 +113,7 @@ var Gsc={
 		for (var i = 0; i < aElem.length; i++) reClass.test(aElem[i].className) && aClass.push(aElem[i]);
 		return aClass;
 	},
-	byTagName: function(elem, obj) {
+	getTagName: function(elem, obj) {
 		return (obj || document).getElementsByTagName(elem);
 	}
 };
