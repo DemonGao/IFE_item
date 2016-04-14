@@ -35,11 +35,11 @@ SortTable.prototype={
             	var left=id.offsetLeft;
             	var sorttable=Gsc.getclass('sorttable')[0];
             	var tr_head=Gsc.getTagName('tr',sorttable)[0];
-            	console.log('offsetTop:'+offsetTop+',height:'+height);
+            	console.log('offsetTop:'+offsetTop+',height:'+height+'left:'+left);
             	if(top>offsetTop&&top<offsetTop+height){
             		Gsc.css(tr_head,'position','fixed');
             		Gsc.css(tr_head,'top','0px');
-            		Gsc.css(tr_head,'left',left);
+            		Gsc.css(tr_head,'left',left+'px');
             	}else{
             		Gsc.css(tr_head,'position','relative');
             	}
