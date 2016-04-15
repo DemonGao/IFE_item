@@ -50,9 +50,11 @@
 	padding: 0px 20px;
 }
 .surface-foot{
-	position: relative;
-	bottom: 40px;
+	position: absolute;
+	width: 100%;
+	bottom: 0px;
 	border-top: 1px solid #16324A;
+	box-sizing: border-box;
 	padding: 0px 20px;
 }
 .surface-foot p{

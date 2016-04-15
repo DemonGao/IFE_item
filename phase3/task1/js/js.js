@@ -70,6 +70,17 @@ Surfaced.prototype={
 				//删除遮盖层
 				Gsc.remove('body','covering');
 			});	
+			//委托模式
+			addEvent(document.body,'click',function(event){
+				var event=getEvent(event);
+				var target=getTarget(event);
+				preventDefault(event);
+				if(target.id==="covering")
+				{
+					Gsc.remove('body','covering');
+					Gsc.css(dom,'display','none');
+				}
+			});
 		}
 		//创建surface-head-title 浮出层-页头-标题
 		var surface_content=Gsc.newElement('div');
