@@ -1,0 +1,159 @@
+.calendarText{
+	position: absolute;
+	top: 50px;
+	left: 50px;
+	width:262px;
+	height: 30px;
+	text-indent: .3em;
+	font-size: 20px;
+}
+.calendar_icon{
+	display: inline-block;
+	height: 24px;
+	width: 24px;
+	background-image: url(../images/calenda_icon.ico);
+	background-repeat: no-repeat;
+	vertical-align: middle;
+}
+.calendar_Text{
+	box-sizing: border-box;
+	width: 222px;
+	text-indent: 1em;
+	height: 30px;
+	border: 1px solid rgba(76,181,247,1);
+}
+/*日历box*/
+.calendar{
+	width: 250px;
+	/*height: 240px;*/
+	border: 1px solid rgba(76,181,247,1);
+	z-index: 1;
+	padding: 5px;
+	transition: all 1s;
+}
+.calendar.show{
+	opacity: 1;
+	transition: all 1s;
+}
+.calendar.hidden{
+	opacity: 0;
+	transition: all .5s;
+}
+/*头部 内容公共区域*/
+.calendar_head,.calendar_content{
+	width: 100%;
+}
+/*日历头部*/
+.calendar_head{
+	position: relative;
+	height: 40px;
+	background-color:rgb(76,181,247)
+}
+.icon_back,.icon_go{
+	display: inline-block;
+	width:30px;/*8*/
+	height: 30px;/*14*/
+	margin:5px 8px;
+	border-radius: 6px;
+	transition: background-color .5s;
+}
+
+.icon_go{
+	background-image: url("../images/datebtn.png");
+	background-repeat: no-repeat;
+	background-position: -24px;
+}
+.icon_go:hover,.icon_back:hover{
+	background-color: #40E0D0;
+	
+	cursor: pointer;
+	transition: background-color .5s;
+}
+.icon_back{
+	background-image: url("../images/datebtn.png");
+	background-repeat: no-repeat;
+	background-position: 0;
+}
+
+.monthSelect,.yearSelect{
+	display: inline-block;
+	height: 30px;
+	font: 22px "楷体";
+	line-height: 30px;
+	text-align: center;
+	margin: 5px 0px;
+	box-sizing: border-box;
+	background: #FFFFFF;
+	vertical-align:top;
+	/*background-image: url(../images/down_down.png);
+	background-repeat:no-repeat ;
+	background-position: right center;*/
+	
+}
+.monthSelect:hover,.yearSelect:hover{
+	cursor: pointer;
+	
+}
+.yearSelect{
+	width: 99px;
+	margin-right: 6px;
+	
+}
+.monthSelect{
+	width: 53px;
+}
+/*.year_icon,.month_icon{
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	margin-left: 7px;
+	background-image: url(../images/down_down.png) ;
+	background-repeat: no-repeat;
+	transform: rotate(90deg);
+}*/
+
+/*日历内容*/
+.calendar_content{
+	height: auto;
+	display: -webkit-flex; /* Safari */
+	display: flex;
+	flex-wrap:wrap;
+	/*overflow: hidden;*/
+	background-color:#ffffee;
+}
+/*年份*/
+.content_year,.content_month,.content_day,.content_week,.content_dayEmpty{
+	box-sizing: border-box;
+	text-align: center;
+	transition: all .5s;
+	
+}
+.content_year,.content_month{
+	line-height: 400%;
+}
+.content_year{
+	width: 23.4%;
+	height:31.7%;	
+	margin: .8%;
+}
+.content_month{
+	width: 23.4%;
+	height:33.3%;
+	margin: 2px;
+}
+.content_week{
+	font-weight: 800;
+}
+.content_day,.content_week,.content_dayEmpty{
+	line-height: 200%;
+	width: 13%;
+	height:20%;	
+	margin: .6428%;
+}
+.content_year:hover,.content_month:hover,.content_day:hover{
+	border-radius: 5px;
+	background-color:rgba(76,181,247,.2) ;
+	cursor: pointer;
+	transform: rotateY(45deg);
+	transition: all .5s;
+}
