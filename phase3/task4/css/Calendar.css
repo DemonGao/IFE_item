@@ -1,16 +1,12 @@
 .calendarText{
-	width:260px;
 	height: 30px;
-	text-indent: .5em;
-	font-size: 20px;
-	/*text-align: center;*/
 }
 
 /*日历box*/
 .calendar{
 	width: 250px;
 	/*height: 240px;*/
-	border: 1px solid rgba(76,181,247,1);
+	border: 1px solid #000;
 	z-index: 1;
 	padding: 5px;
 	transition: all 1s;

@@ -140,9 +140,8 @@ Calendar.prototype={
 					This.createDate(calendar_content,'day');
 			}
 			if(target.className==='content_day'){
-				var day=target.innerHTML.length==1?'0'+target.innerHTML:target.innerHTML;
-				var month=This.monthSelect.innerHTML.length==1?'0'+This.monthSelect.innerHTML:This.monthSelect.innerHTML;
-				This.base.bingId.value=This.yearSelect.innerHTML+'-'+month+'-'+day;
+//				Gsc.css(target,'background-color','rgba(76,181,247,.6)');
+				This.base.bingId.value=This.yearSelect.innerHTML+'-'+This.monthSelect.innerHTML+'-'+target.innerHTML;
 				Gsc.attr(This.calendar,'className','calendar hidden');
 				Gsc.css(This.calendar,'left','-'+base.bingId.offsetWidth+'px');
 			}
