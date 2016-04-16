@@ -140,8 +140,9 @@ Calendar.prototype={
 					This.createDate(calendar_content,'day');
 			}
 			if(target.className==='content_day'){
-//				Gsc.css(target,'background-color','rgba(76,181,247,.6)');
-				This.base.bingId.value=This.yearSelect.innerHTML+'-'+This.monthSelect.innerHTML+'-'+target.innerHTML;
+				var day=target.innerHTML.length==1?'0'+target.innerHTML:target.innerHTML;
+				var month=This.monthSelect.innerHTML.length==1?'0'+This.monthSelect.innerHTML:This.monthSelect.innerHTML;
+				This.base.bingId.value=This.yearSelect.innerHTML+'-'+month+'-'+day;
 				Gsc.attr(This.calendar,'className','calendar hidden');
 				Gsc.css(This.calendar,'left','-'+base.bingId.offsetWidth+'px');
 			}
@@ -223,10 +224,8 @@ Calendar.prototype={
 				for(var i=1;i<=daysNum;i++){
 					var dayNum=Gsc.newElement('div');
 					Gsc.attr(dayNum,'className','content_day');
-					
 					var date=That.date,
 						nowdate=date.getFullYear()+'-'+parseInt(date.getMonth()+1)+'-'+date.getDate();
-						
 					Gsc.attr(dayNum,'calendar_date',year+'-'+month+'-'+i);
 					if(nowdate==dayNum.calendar_date){
 						Gsc.css(dayNum,'background-color','rgba(76,181,247,.6)');
