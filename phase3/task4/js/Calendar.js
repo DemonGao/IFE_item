@@ -224,15 +224,8 @@ Calendar.prototype={
 				for(var i=1;i<=daysNum;i++){
 					var dayNum=Gsc.newElement('div');
 					Gsc.attr(dayNum,'className','content_day');
-<<<<<<< HEAD
 					var date=That.date,
 						nowdate=date.getFullYear()+'-'+parseInt(date.getMonth()+1)+'-'+date.getDate();
-=======
-					
-					var date=That.date,
-						nowdate=date.getFullYear()+'-'+parseInt(date.getMonth()+1)+'-'+date.getDate();
-						
->>>>>>> refs/remotes/origin/master
 					Gsc.attr(dayNum,'calendar_date',year+'-'+month+'-'+i);
 					if(nowdate==dayNum.calendar_date){
 						Gsc.css(dayNum,'background-color','rgba(76,181,247,.6)');
