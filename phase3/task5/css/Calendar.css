@@ -149,6 +149,7 @@
 	width: 13%;
 	height:20%;	
 	margin: .6428%;
+	border-radius: 5px;
 }
 .content_year:hover,.content_month:hover,.content_day:hover{
 	border-radius: 5px;

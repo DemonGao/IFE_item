@@ -33,7 +33,7 @@ Calendar.prototype={
 			Gsc.css(calendar,'top',base.bingId.offsetTop+this.base.bingId.offsetHeight+'px');
 			console.log(base.bingId.offsetTop+this.base.bingId.offsetHeight+'px');
 			console.log(base.bingId.offsetLeft+'px');
-			Gsc.css(calendar,'left',base.bingId.offsetLeft+'px');
+			Gsc.css(calendar,'left','-'+(base.bingId.offsetLeft+base.bingId.offsetWidth)+'px');
 			
 		}else{
 			Gsc.css(calendar,'position',base.base_css.position);
