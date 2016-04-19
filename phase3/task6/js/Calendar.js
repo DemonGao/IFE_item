@@ -191,11 +191,11 @@ Calendar.prototype={
 		if(parseInt(this.selectArr.selectFirst.innerHTML)>parseInt(target.innerHTML)||parseInt(target.innerHTML)<this.selectArr.selectEnd.innerHTML){
 			Gsc.attr(this.selectArr.selectFirst,'className','content_day');
 			this.selectArr.selectFirst=target;
+			var firstdate=this.yearSelect.innerHTML+'-'+this.monthSelect.innerHTML+'-'+ this.selectArr.selectFirst.innerHTML;
+			Gsc.attr(this.selectArr.selectFirst,'date',firstdate);
+			console.log("起始日期:"+this.selectArr.selectFirst.date);
 			if(!this.isDays_OOR(target)){
 				Gsc.attr(this.selectArr.selectFirst,'className','content_day selectFirst');
-//				var firstdate=this.yearSelect.innerHTML+'-'+this.monthSelect.innerHTML+'-'+ this.selectArr.selectFirst.innerHTML;
-//				Gsc.attr(this.selectArr.selectFirst,'date',firstdate);
-//				console.log("起始日期:"+this.selectArr.selectFirst.date);
 			}
 		}else{
 			Gsc.attr(this.selectArr.selectEnd,'className','content_day');
@@ -203,12 +203,8 @@ Calendar.prototype={
 			var enddate=this.yearSelect.innerHTML+'-'+this.monthSelect.innerHTML+'-'+this.selectArr.selectEnd.innerHTML;
 			Gsc.attr(this.selectArr.selectEnd,'date',enddate);
 			console.log("终止日期:"+this.selectArr.selectEnd.date);
-			
 			if(!this.isDays_OOR(target)){
 				Gsc.attr(this.selectArr.selectEnd,'className','content_day selectEnd');
-//				var enddate=this.yearSelect.innerHTML+'-'+this.monthSelect.innerHTML+'-'+this.selectArr.selectEnd.innerHTML;
-//				Gsc.attr(this.selectArr.selectEnd,'date',enddate);
-//				console.log("终止日期:"+this.selectArr.selectEnd.date);
 			}
 		}
 	}
@@ -233,8 +229,14 @@ Calendar.prototype={
 			return false;
 		}else{
 			alert("超出允许设置时间段选择的最大跨度");
-			Gsc.attr(This.selectArr.selectEnd,'className','content_day');	
-			This.selectArr.selectEnd=null;
+			if(This.selectArr.selectFirst!=null){
+				Gsc.attr(This.selectArr.selectFirst,'className','content_day');
+				This.selectArr.selectFirst=null;
+			}
+			if(This.selectArr.selectEnd!=null){
+				Gsc.attr(This.selectArr.selectEnd,'className','content_day');
+				This.selectArr.selectEnd=null;
+			}
 			console.log("回调函数1");
 			return true;
 		}
