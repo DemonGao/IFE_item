@@ -212,7 +212,8 @@ Calendar.prototype={
 	//判断是否超出范围 返回布尔值 超出范围返回true 没超出范围返回false
 	isDays_OOR:function(target){
 		var This=this;
-		var len=parseInt(This.selectArr.selectEnd.innerHTML)-parseInt(This.selectArr.selectFirst.innerHTML);
+		var len=DateDiff(This.selectArr.selectEnd.date,This.selectArr.selectFirst.date);
+		console.log(This.selectArr.selectFirst.date+'----'+This.selectArr.selectEnd.date+':相差'+len+'天');
 		if(len<0){
 			len=-len;
 			var team;
@@ -222,7 +223,7 @@ Calendar.prototype={
 			Gsc.attr(This.selectArr.selectFirst,'className','content_day selectFirst');
 			Gsc.attr(This.selectArr.selectEnd,'className','content_day selectEnd');
 		}
-		console.log(This.selectArr.selectFirst.date+'----'+This.selectArr.selectEnd.date);
+		
 		if(len>=This.base.daylimit[0]&&len<=This.base.daylimit[1]){
 			console.log('没超出最大范围:'+len);
 			Gsc.attr(This.selectArr.selectEnd,'className','content_day selectEnd');
