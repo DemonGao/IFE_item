@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="01185425-676b-4afa-8d46-6614a8b366d8" name="Default" comment="动态数据绑定 - 事件传播机制">
+=======
+    <list default="true" id="01185425-676b-4afa-8d46-6614a8b366d8" name="Default" comment="">
+>>>>>>> 328be989568898d11755ea809b7c70af2dc031d6
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/2017/vue/动态数据绑定（三）/index.html" afterPath="$PROJECT_DIR$/2017/vue/动态数据绑定（三）/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/2017/vue/动态数据绑定（二）/index.html" afterPath="$PROJECT_DIR$/2017/vue/动态数据绑定（二）/index.html" />
     </list>
     <ignored path="IFE_item.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,18 +31,133 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< HEAD
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/2017/vue/动态数据绑定（三）/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
               <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="90" selection-end-column="36" />
+=======
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/2017/vue/动态数据绑定（一）/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="615">
+                <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+                <folding>
+                  <marker date="1487950125000" expanded="true" signature="337:371" ph="{&quot;name&quot;: 'youngwind'...}" />
+                  <marker date="1487950125000" expanded="true" signature="399:444" ph="{...}" />
+                </folding>
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+          <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="0">
+                <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <folding>
+                  <marker date="1487950125000" expanded="true" signature="337:371" ph="{&quot;name&quot;: 'youngwind'...}" />
+                  <marker date="1487950125000" expanded="true" signature="399:444" ph="{...}" />
+                </folding>
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/2017/vue/动态数据绑定（一）/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="433">
+              <caret line="44" column="56" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="56" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/2017/vue/动态数据绑定（二）/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="js.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/2017/vue/动态数据绑定（三）/js.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/2017/vue/动态数据绑定（三）/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="24" column="39" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
+>>>>>>> 328be989568898d11755ea809b7c70af2dc031d6
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< HEAD
       <file leaf-file-name="js.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/2017/vue/动态数据绑定（三）/js.js">
+=======
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/2017/vue/动态数据绑定（三）/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="465">
+                <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+          <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="0">
+                <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/2017/vue/动态数据绑定（二）/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="0">
+                <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+          <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="0">
+                <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="js.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/2017/vue/动态数据绑定（二）/js.js">
+>>>>>>> 328be989568898d11755ea809b7c70af2dc031d6
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
               <caret line="23" column="47" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
@@ -77,9 +198,14 @@
         <option value="$PROJECT_DIR$/2017/vue/动态数据绑定（二）/js.js" />
         <option value="$PROJECT_DIR$/2017/vue/动态数据绑定（二）/README.md" />
         <option value="$PROJECT_DIR$/2017/vue/动态数据绑定（三）/README.md" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/2017/vue/动态数据绑定（二）/index.html" />
         <option value="$PROJECT_DIR$/2017/vue/动态数据绑定（三）/index.html" />
         <option value="$PROJECT_DIR$/2017/vue/动态数据绑定（三）/js.js" />
+=======
+        <option value="$PROJECT_DIR$/2017/vue/动态数据绑定（三）/index.html" />
+        <option value="$PROJECT_DIR$/2017/vue/动态数据绑定（二）/index.html" />
+>>>>>>> 328be989568898d11755ea809b7c70af2dc031d6
       </list>
     </option>
   </component>
@@ -155,6 +281,10 @@
               <option name="myItemId" value="vue" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="动态数据绑定（二）" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -175,6 +305,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="动态数据绑定（三）" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IFE_item" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IFE_item" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2017" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vue" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -270,7 +418,11 @@
       <updated>1487945217736</updated>
       <workItem from="1487945219026" duration="4414000" />
       <workItem from="1487984723600" duration="710000" />
+<<<<<<< HEAD
       <workItem from="1487998138409" duration="15011000" />
+=======
+      <workItem from="1487998138409" duration="10849000" />
+>>>>>>> 328be989568898d11755ea809b7c70af2dc031d6
     </task>
     <task id="LOCAL-00001" summary="vue 源码解读之动态数据绑定(一)">
       <created>1487945619682</created>
@@ -328,6 +480,7 @@
       <option name="project" value="LOCAL" />
       <updated>1488011423763</updated>
     </task>
+<<<<<<< HEAD
     <task id="LOCAL-00009" summary="手误问题修改">
       <created>1488011779827</created>
       <option name="number" value="00009" />
@@ -354,6 +507,13 @@
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="20135000" />
+=======
+    <option name="localTasksCounter" value="9" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="15973000" />
+>>>>>>> 328be989568898d11755ea809b7c70af2dc031d6
   </component>
   <component name="ToolWindowManager">
     <frame x="80" y="23" width="1600" height="1027" extended-state="6" />
@@ -394,9 +554,13 @@
     <MESSAGE value="完成监听其属性的读取与变化" />
     <MESSAGE value="解决数据绑定重新赋值时 新设置的对象仍能继续响应getter 和 setter" />
     <MESSAGE value="任务描述" />
+<<<<<<< HEAD
     <MESSAGE value="手误问题修改" />
     <MESSAGE value="动态数据绑定 - 事件传播机制" />
     <option name="LAST_COMMIT_MESSAGE" value="动态数据绑定 - 事件传播机制" />
+=======
+    <option name="LAST_COMMIT_MESSAGE" value="任务描述" />
+>>>>>>> 328be989568898d11755ea809b7c70af2dc031d6
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -509,6 +673,17 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/2017/vue/动态数据绑定（一）/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="44" column="56" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> 328be989568898d11755ea809b7c70af2dc031d6
     <entry file="file://$PROJECT_DIR$/2017/vue/动态数据绑定（二）/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -543,6 +718,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/2017/vue/动态数据绑定（三）/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -580,6 +756,17 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/2017/vue/动态数据绑定（一）/README.md">
+=======
+    <entry file="file://$PROJECT_DIR$/2017/vue/动态数据绑定（三）/js.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/2017/vue/动态数据绑定（三）/README.md">
+>>>>>>> 328be989568898d11755ea809b7c70af2dc031d6
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="615">
@@ -605,22 +792,35 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/2017/vue/动态数据绑定（二）/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="24" column="40" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
+=======
+    <entry file="file://$PROJECT_DIR$/2017/vue/动态数据绑定（三）/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="24" column="39" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
+>>>>>>> 328be989568898d11755ea809b7c70af2dc031d6
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/2017/vue/动态数据绑定（二）/js.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="435">
           <caret line="39" column="56" selection-start-line="38" selection-start-column="36" selection-end-line="39" selection-end-column="56" />
+=======
+        <state relative-caret-position="255">
+          <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="48" />
+>>>>>>> 328be989568898d11755ea809b7c70af2dc031d6
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/2017/vue/动态数据绑定（三）/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -633,6 +833,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="23" column="47" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
+=======
+    <entry file="file://$PROJECT_DIR$/2017/vue/动态数据绑定（二）/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+>>>>>>> 328be989568898d11755ea809b7c70af2dc031d6
           <folding />
         </state>
       </provider>
