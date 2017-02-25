@@ -22,7 +22,7 @@
                    val = obj[key];
                     //第一大难题:初始化深对象解决问题
                    if(typeof val === 'object'){
-                       new Observer(data)
+                       new Observer(val)
                    }
                    this.convert(key,val);
                }
