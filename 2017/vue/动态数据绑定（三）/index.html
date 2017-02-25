@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动态数据绑定(三)</title>
+</head>
+<body>
+
+<script type="text/javascript">
+   function Observer(data){
+       this.data = data;
+        this.watch = {};    //储存所有变量监听事件
+       this.walk(data);
+   }
+   Observer.prototype = {
+
+       walk(obj){
+           let val;
+           for(let key in obj){
+
+               if(obj.hasOwnProperty(key)){
+                   val = obj[key];
+                    //第一大难题:初始化深对象解决问题
+                   if(typeof val === 'object'){
+                       new Observer(data)
+                   }
+                   this.convert(key,val);
+               }
+           }
+       },
+       convert(key,val){
+           this.$watch(key,function(newVal){
+               console.log(`你设置了 ${key},新的值为 ${newVal}`);
+           })
+           let self =this;
+           Object.defineProperty(this.data,key,{
+               enumerable:true,
+               configurable:true,
+               get : function(){
+                   console.log(`你访问了 ${key}`);
+                   return val;
+               },
+               set : function(newVal){
+                   self.watch[key](newVal);
+                   if(newVal === val) return;
+
+                   if (typeof newVal === 'object'){
+                       new Observer(newVal)
+                   }
+                   val = newVal;
+               }
+           })
+       },
+       $watch(key,callback){
+           this.watch[key] = callback;
+       }
+   }
+
+   let app1 = new Observer({
+       name: 'youngwind',
+       age: 25
+   });
+
+   app1.data.name = {
+       lastName: 'liang',
+       firstName: 'shaofeng'
+   };
+
+   app1.data.name.lastName;
+   // 这里还需要输出 '你访问了 lastName '
+   app1.data.name.firstName = 'lalala';
+   // 这里还需要输出 '你设置了firstName, 新的值为 lalala'
+
+    app1.$watch('age',function(age){
+        console.log(`我的年纪变了，现在已经是：${age}岁了`)
+    })
+   app1.data.age = 100; // 输出：'我的年纪变了，现在已经是100岁了'
+</script>
+</body>
+</html>
