@@ -1,44 +1,62 @@
 # 任务目的
-
-1. 了解 getter 和 setter
-2. 了解 new
+1. 在实践中使用递归思想
+2. 了解设计模式中的“发布-订阅模式”
 
 # 任务描述
-这是“动态数据绑定”系列的第一题。
+这是“动态数据绑定”系列的第二题。在第一题的基础上，我们继续考虑以下难点：
 
-我之前经常使用 Vue，后来不满足于仅仅使用它，我想了解其内部实现原理，所以就尝试学习其源码，获益匪浅。所以，如果你跟我一样，希望挑战这高难度的事情，那就开启这一系列吧！
-
-我们从最简单的开始。
-
-其中，动态数据绑定就是 Vue 最为基础，最为有用的一个功能。这个系列将分成5部分，一步一步来理解和实现这一功能。
-
-ok，我们从最简单的开始。给定任意一个对象，如何监听其属性的读取与变化？也就是说，如何知道程序访问了对象的哪个属性，又改变了哪个属性？ 举个例子。
-```javascript
-let app1 = new Observer({
-  name: 'youngwind',
-  age: 25
-});
-
-let app2 = new Observer({
-  university: 'bupt',
-  major: 'computer'
-});
-
-// 要实现的结果如下：
-app1.data.name // 你访问了 name
-app.data.age = 100;  // 你设置了 age，新的值为100
-app2.data.university // 你访问了 university
-app2.data.major = 'science'  // 你设置了 major，新的值为 science
+1. 如果传入参数对象是一个“比较深”的对象（也就是其属性值也可能是对象），那该怎么办呢？举个例子。
+```js
+// 一个“比较深”的对象：某些属性的值也是一个对象
+let obj = {
+ a: 1,
+ b: 2,
+ c: {
+     d: 3,
+     e: 4
+ }
+}
 ```
-请实现这样的一个 Observer，要求如下：
 
-1. 传入参数只考虑对象，不考虑数组。
-2. new Observer返回一个对象，其 data 属性要能够访问到传递进去的对象。
-3. 通过 data 访问属性和设置属性的时候，均能打印出右侧对应的信息。
+2. 如果设置新的值是一个对象的话，新设置的对象的属性是否能能继续响应 getter 和 setter。举个例子。
+```js
+ let app1 = new Observer({
+         name: 'youngwind',
+         age: 25
+ });
 
+ app1.data.name = {
+         lastName: 'liang',
+         firstName: 'shaofeng'
+ };
+
+ app1.data.name.lastName;
+ // 这里还需要输出 '你访问了 lastName '
+ app1.data.name.firstName = 'lalala';
+ // 这里还需要输出 '你设置了firstName, 新的值为 lalala'
+ ```
+ 
+3. 考虑传递回调函数。在实际应用中，当特定数据发生改变的时候，我们是希望做一些特定的事情的，而不是每一次都只能打印出一些信息。所以，我们需要支持传入回调函数的功能。举个例子。
+```js
+ let app1 = new Observer({
+         name: 'youngwind',
+         age: 25
+ });
+
+ // 你需要实现 $watch 这个 API
+ app1.$watch('age', function(age) {
+         console.log(`我的年纪变了，现在已经是：${age}岁了`)
+ });
+
+ app1.data.age = 100; // 输出：'我的年纪变了，现在已经是100岁了'
+ ```
+ 
 # 任务注意事项
+
 1. 不能使用任何第三方的库
 2. 程序执行环境为浏览器
 
 # 在线学习参考资料
-* [vue早期源码学习系列之一：如何监听一个对象的变化](https://github.com/youngwind/blog/issues/84)
+
+1. [发布-订阅模式](https://gold.xitu.io/entry/580b5553570c350068e6c2d6)
+2. 更多设计模式相关的资料强烈推荐曾探所著《JavaScript设计模式与开发实践》
