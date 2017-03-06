@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动态数据绑定(四)</title>
+</head>
+<body>
+<!-- 页面中原本的 html 模板片段 -->
+<div id="app">
+    <p>姓名：{{person.user.name}}</p>
+    <p>年龄：{{person.user.age}}</p>
+
+    <p>姓名：{{user.name}}</p>
+    <p>年龄：{{user.age}}</p>
+    <div>
+        {{user.name}}{{user.age}}
+    </div>
+</div>
+<script>
+    class Vue{
+        //这里相当于 构造函数
+        constructor(opt){
+            this.$el = document.querySelector(opt.el);
+            this.data = opt.data;
+            this.render();
+        }
+        render(){
+            let replaceStr = this.$el.innerText;
+            var reg = /\{\{(.*?)\}\}/g;     //正则 全局 非贪婪匹配  {{ }}
+
+            //遍历匹配到的字段
+            replaceStr.match(reg).forEach((val) =>{
+
+                let key = val.slice(2,-2);  //将{{ }} 移除
+
+                var props=key.split('.');       // 获取属性
+                let  data = this.data;
+                props.forEach((val) =>{         //遍历最终匹配到的属性值
+                    data = data[val];
+                })
+
+                replaceStr = replaceStr.replace(val,data);  //替换
+            })
+            this.$el.innerText = replaceStr;            //重新给页面赋值
+        }
+    }
+
+
+    let app = new Vue({
+        el: '#app',
+        data: {
+            person:{
+                user: {
+                    name: 'youngwind',
+                    age: 25
+                },
+            },
+            user: {
+                name: 'gsc',
+                age: 23
+            },
+
+        }
+    });
+</script>
+</body>

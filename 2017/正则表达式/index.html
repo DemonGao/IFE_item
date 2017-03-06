@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正则表达式入门</title>
+</head>
+<body>
+
+<script>
+
+//手机号验证
+var telPhone_Reg = /1(3\d{1}|47|5[235689]{1}|7[0,8]{1}|8[0236789]{1}){1}\d{8}$/;
+
+//              /(^0|\D)/g          |与[] 区别
+//              /[(^0)\D]/g
+
+var phonenumber = '17853593651';
+console.log(telPhone_Reg.test(phonenumber))
+
+
+
+    //重复单词
+    var wordagain_Reg = /(\w+)\s(\1)/;
+
+    var wordagain1 = 'foo foo bar';
+    var wordagain2 = 'foo bar foo';
+    var wordagain3 = 'foo  barbar bar';
+    console.log(wordagain_Reg.test(wordagain1))
+    console.log(wordagain1.match(wordagain_Reg))
+    console.log(wordagain_Reg.test(wordagain2))
+    console.log(wordagain2.match(wordagain_Reg))
+    console.log(wordagain_Reg.test(wordagain3))
+    console.log(wordagain3.match(wordagain_Reg))
+</script>
+</body>
+</html>

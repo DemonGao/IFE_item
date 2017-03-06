@@ -5,7 +5,7 @@ function Observer(data,parent,parentKey){
 
     this.watch = {};    //储存所有变量监听事件
 
-    this.walk(data);
+    this.walk(data);    //修改属性加 get、set,监听其属性的读取与变化
 }
 Observer.prototype = {
     // 此函数用于深层次遍历对象的各个属性

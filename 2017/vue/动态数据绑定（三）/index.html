@@ -7,88 +7,121 @@
 <body>
 
 <script type="text/javascript">
-   function Observer(data,parent,parentKey){
-       this.data = data;
-       this.parent = parent;
-       this.parentKey = parentKey;
+    /**
+     * Observer 观察data,监听其属性的读取与变化
+     */
+    function Observer(data, events, parent) {
+        this.data = data; //存下当前data
+        this.events = events || {}; //存下所有事件
+        this.parent = parent; // 如果深层，存下上一级的key
+        this.defineAllData(data, this.events);
+    }
 
-       this.watch = {};    //储存所有变量监听事件
 
-       this.walk(data);
-   }
-   Observer.prototype = {
-       // 此函数用于深层次遍历对象的各个属性
-       // 采用的是递归的思路
-       // 因为我们要为对象的每一个属性绑定getter和setter
-       walk(obj){
-           let val;
-           for(let key in obj){
-               // 这里为什么要用hasOwnProperty进行过滤呢？
-               // 因为for...in 循环会把对象原型链上的所有可枚举属性都循环出来
-               // 而我们想要的仅仅是这个对象本身拥有的属性，所以要这么做。
-               if(obj.hasOwnProperty(key)){
-                   val = obj[key];
-                    //第一大难题:初始化深对象解决问题
-                   if(typeof val === 'object'){
-                       new Observer(val,this,key);
-                   }
-                   this.convert(key,val);
-               }
-           }
-       },
-       convert(key,val){
-           // 为每个值设置一个监听事件
-           this.$watch(key,function(newVal){
-               console.log(`你设置了 ${key},新的值为 ${newVal}`);
-           })
-           let self =this;
-           Object.defineProperty(this.data,key,{
-               enumerable:true, ////enumerable可枚举属性 true: for in 可以枚举 false: 不可枚举
-               configurable:true,
-               get : function(){
-                   console.log(`你访问了 ${key}`);
-                   return val;
-               },
-               set : function(newVal){
-                   if(self.parent!=null){
-                       self.parent.watch[self.parentKey](newVal);//若有父类,则会调用父类的监听事件
-                   }
+    /**
+     * 递归修改属性
+     *  此函数用于深层次遍历对象的各个属性
+     *  采用的是递归的思路
+     *  因为我们要为对象的每一个属性绑定getter和setter`
+     */
+    Observer.prototype.defineAllData = function(obj, events) {
+        for (var key in obj) {
+            // 这里为什么要用hasOwnProperty进行过滤呢？
+            // 因为for...in 循环会把对象原型链上的所有可枚举属性都循环出来
+            // 而我们想要的仅仅是这个对象本身拥有的属性，所以要这么做。
+            if (obj.hasOwnProperty(key)) { //可枚举属性
+                if (typeof obj[key] === 'object') { //这个key是obj，递归，往key加get、set
+                    new Observer(obj[key], events, key);
+                }
+                this.defineGetSet(key, obj[key], events); //对该obj的key加set、set
+            }
+        }
+    }
+    /**
+     * 修改属性加get、set，监听其属性的读取与变化
+     */
+    Observer.prototype.defineGetSet = function(key, val, events) {
+        var self = this;
+        self.$watch(key,function(newVal){
+            console.log(`你设置了 ${key},新的值为 ${newVal}`);
+        })
 
-                   self.watch[key](newVal);// 回调监听 取代下面那条语句
-                   //console.log(`你设置了 ${key}, 新的值为${newVal}`);
-                   if(newVal === val) return;
+        Object.defineProperty(this.data, key, {
+            enumerable: true,
+            configurable: true,
+            get: function() {
+                console.log('你访问了', key);
+                return val;
+            },
+            set: function(newVal) {
 
-                   if (typeof newVal === 'object'){
-                       new Observer(newVal,this,key)
-                   }
-                   val = newVal;
-               }
-           })
-       },
-       $watch(key,callback){
-           this.watch[key] = callback;
-//           if(this.watch[key] in)
-//           console.log(this.watch[key]);
-       },
+                if (newVal !== val) {
+                    val = newVal;
+                    var parent = self.parent;
+                    while(parent) { // 循环寻找上级触发事件
+                        self.$emit(parent, newVal);
+                        parent = parent.parent;
+                    }
+                    self.$emit(key, newVal); //触发当前key事件
+                }
+                Observer.tempArr = [];
+                if (typeof newVal === 'object') { //这个key是obj，递归，往key加get、set
+                    return new Observer(newVal, events, key);
+                }
+            }
+        })
+    }
 
-   }
+    /**
+     * watch key放入事件数组
+     */
+    Observer.prototype.$watch = function(key, listener) {
+        if (!this.events[key]) {
+            this.events[key] = [];
+        }
+        this.events[key].push(listener);
+    }
 
-   let app2 = new Observer({
-       name: {
-           firstName: 'shichao',
-           lastName: 'gao'
-       },
-       age: 25
-   });
+    /**
+     * emit 触发事件
+     */
+    Observer.prototype.$emit = function() {
+        var key = [].shift.call(arguments);
+        var data = [].slice.call(arguments);
+        if (!this.events[key] || this.events[key].length < 1) {
+            return;
+        }
+        this.events[key].forEach(function(listener) {
+            listener(data || {});
+        })
+    }
 
-   app2.$watch('name', function (newName) {
-       console.log('我的姓名发生了变化，可能是姓氏变了，也可能是名字变了。')
-   });
 
-   app2.data.name.firstName = 'hahaha';
-   // 输出：我的姓名发生了变化，可能是姓氏变了，也可能是名字变了。
-   app2.data.name.lastName = 'blablabla';
-   // 输出：我的姓名发生了变化，可能是姓氏变了，也可能是名字变了。
+    let app2 = new Observer({
+        person:{
+            name: {
+                firstName: 'shichao',
+                lastName: 'gao'
+            },
+            age: 25
+        },
+        love:' 游泳'
+    });
+
+    app2.$watch('name', function (newName) {
+        console.log('我的姓名发生了变化，可能是姓氏变了，也可能是名字变了。')
+    });
+//    app2.$watch('name', function (newName) {
+//        console.log('111111')
+//    });
+//    app2.$watch('name', function (newName) {
+//        console.log('222222')
+//    });
+    app2.data.person.name.firstName = 'hahaha';
+    // 输出：我的姓名发生了变化，可能是姓氏变了，也可能是名字变了。
+    app2.data.person.name.lastName = 'blablabla';
+    // 输出：我的姓名发生了变化，可能是姓氏变了，也可能是名字变了。
+
 </script>
 </body>
 </html>
