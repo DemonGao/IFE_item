@@ -7,30 +7,34 @@
 <body>
 
 <script>
+    //              /(^0|\D)/g          |与[] 区别
+    //              /[(^0)\D]/g
+    //   \b :通常是单词分界位置，但如果在字符类里使用代表退格
+    //手机号验证
+    var telPhone_Reg = /1(3\d{1}|47|5[235689]{1}|7[0,8]{1}|8[0236789]{1}){1}\d{8}$/;
+    //相邻重复单词的正则表达式
+    var wordagain_Reg = /(\b\w+\b)\s(\1)/;
 
-//手机号验证
-var telPhone_Reg = /1(3\d{1}|47|5[235689]{1}|7[0,8]{1}|8[0236789]{1}){1}\d{8}$/;
+    //测试案例
+    var telphone = [13519287623,17823456741,12348719872,180298376211]
+    var word = ['foo foo bar','foo bar foo','foo  barbar bar']
 
-//              /(^0|\D)/g          |与[] 区别
-//              /[(^0)\D]/g
+    console.log('手机号测试')
+    telphone.forEach(function(key){
 
-var phonenumber = '17853593651';
-console.log(telPhone_Reg.test(phonenumber))
+        console.log(`${key}:${telPhone_Reg.test(key)}`)
+    })
+
+    console.log('相邻重复单词测试')
+    word.forEach(function(key){
+
+        console.log(`${key}:${wordagain_Reg.test(key)}`)
+    })
 
 
 
-    //重复单词
-    var wordagain_Reg = /(\w+)\s(\1)/;
 
-    var wordagain1 = 'foo foo bar';
-    var wordagain2 = 'foo bar foo';
-    var wordagain3 = 'foo  barbar bar';
-    console.log(wordagain_Reg.test(wordagain1))
-    console.log(wordagain1.match(wordagain_Reg))
-    console.log(wordagain_Reg.test(wordagain2))
-    console.log(wordagain2.match(wordagain_Reg))
-    console.log(wordagain_Reg.test(wordagain3))
-    console.log(wordagain3.match(wordagain_Reg))
+
 </script>
 </body>
 </html>
